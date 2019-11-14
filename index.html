@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            background-color: rgba(9, 255, 0, 0.952);
+            padding: 1%;
+            margin-left: 5px;
+            margin-right: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-color: firebrick;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <script>
+        //A
+        let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+        function Buttons(amountOfButtons) {
+
+            letterSlicing = alphabet.slice(0, amountOfButtons)
+
+            for (a in letterSlicing) {
+
+                let btn = document.createElement("BUTTON");
+                document.body.appendChild(btn);
+
+                btn.innerHTML = letterSlicing[a];
+                btn.id = letterSlicing[a];
+
+                document.getElementById(btn.id).onclick = function () { console.log("Button " + btn.id + " was clicked.") }
+
+            }
+
+        }
+
+        Buttons(26);
+
+
+        //B
+
+        function recipeInitial(title, serves, ingredients) {
+
+            this.title = title;
+            this.serves = serves;
+            this.ingredients = ingredients;
+
+            this.print = function () {
+
+                document.write("<br><br><br><br><br><br>Title: " + this.title, "<br><br>");
+                document.write("Serves: ", this.serves, "<br><br>");
+                document.write("Ingredients: ", "<br><br>");
+
+                for (a in this.ingredients) {
+                    document.write(this.ingredients[a], "<br>");
+                }
+
+            }
+
+        }
+
+        recipeNew = new recipeInitial("BURGER", 1, ["Buns", "Patty", "Lettuce", "Tomato", "Ketchup", "Mustard", "Pickles"]);
+        recipeNew.print();
+
+    </script>
+
+</html>
